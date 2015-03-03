@@ -1,0 +1,54 @@
+<html>
+<head>
+    <title>MACAddress Override Manager</title>
+</head>
+
+<body>
+    <h1>MACAddress Override Manager</h1>
+    
+    <h3>Add MACAddress Override</h3>
+    <form action = 'addmacaddress' method ='POST'>
+        <table>
+            <tr>
+                <td>MACAddress</td>
+                <td>
+                    <input type='text' name = 'macAddress'>
+                </td>
+            </tr>
+            <tr>
+                <td>QoS</td>
+                <td>
+                    <input type='text' name = 'qos' >
+                </td>
+            </tr>
+            <tr>
+                <td>Description</td>
+                <td>
+                    <input type='text' name = 'description' >
+                </td>
+            </tr>
+            <tr>
+                <td colspan = "2">
+                    <input type='submit' value="Submit">
+                </td>
+            </tr>
+        </table>
+    </form>
+    
+    <h3>Delete MACAddress</h3>
+    <form action = 'deletemacaddress' method = 'POST'>
+
+        <select size="20" name="macAddress">
+        <?php
+            foreach($this->macaddresslist as $macAddress) {
+                echo "<option value = {$macAddress['macAddress']}>{$macAddress['macAddress']}</option>";
+            }
+        ?>
+        </select>
+        <input type = 'submit' value = 'Delete MACAddress'>
+        
+    </form>
+    
+</body>
+    
+</html>

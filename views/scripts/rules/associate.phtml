@@ -1,0 +1,55 @@
+<html>
+<head>
+    <title>Business Rules Manager</title>
+</head>
+
+<body>
+    <h1>Business Rules Manager</h1>
+    
+    <?php
+        
+        if($_GET['br'] && $_GET['at']) {   
+            echo "These are the rules associated to Access Type $_GET[at]:<br><br>"
+                . "<table border = 1>"
+                . "<th>Business Rule</th><th>Order</th>";
+            foreach($this->associatedRules as $row) {
+                echo "<tr><td>$row[businessRule]</td><td>$row[sequence]</td></tr>";
+            }
+            echo "</table><br>Where in the sequence do you wish to insert Business Rule $_GET[br]?";
+            ?>
+    
+            <form action ="associated" method ="GET">
+                <select name ='seq'>
+                    <?php 
+                    for($i = 1; $i <= $this->count+1; $i++) {
+                        echo "<option value =$i>$i</option>";
+                    }
+                    ?>
+                </select>
+                <input type='hidden' name = 'br' value ='<?php echo $_GET['br']; ?>'>
+                <input type='hidden' name = 'at' value ='<?php echo $_GET['at']; ?>'>
+                <input type ="submit" value ="Submit">
+            </form>
+
+            <?php
+            
+        }
+        else if($_GET['br']) {   
+            echo "Select an Access Type to associate the Business Rule:<br><br>";
+            foreach($this->accessTypes as $row) {
+                echo "<a href = ?br=$_GET[br]&at=$row[idAccessType]>$row[idAccessType]</a><br>";
+            }
+        }
+        else {
+            echo "Select a Business Rule:<br><br>";
+            foreach($this->businessRulesList as $row) {
+                echo "<a href = ?br=$row[idBusinessRule]>$row[idBusinessRule]</a><br>";
+            }
+        }
+    
+    ?>
+
+    
+</body>
+    
+</html>

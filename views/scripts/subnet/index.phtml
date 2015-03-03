@@ -1,0 +1,54 @@
+<html>
+<head>
+    <title>Subnet override manager</title>
+</head>
+
+<body>
+    <h1>Subnet Override Manager</h1>
+    
+    <h3>Add subnet</h3>
+    <form action = 'checksubnet' method ='POST'>
+        <table>
+            <tr>
+                <td>Subnet</td>
+                <td>
+                    <input type='text' name = 'subnet'>
+                </td>
+            </tr>
+            <tr>
+                <td>QoS</td>
+                <td>
+                    <input type='text' name = 'qos' >
+                </td>
+            </tr>
+            <tr>
+                <td>Description</td>
+                <td>
+                    <input type='text' name = 'description' >
+                </td>
+            </tr>
+            <tr>
+                <td colspan = "2">
+                    <input type='submit' value="Submit">
+                </td>
+            </tr>
+        </table>
+    </form>
+    
+    <h3>Delete subnet</h3>
+    <form action = 'deletesubnet' method = 'POST'>
+
+        <select size="20" name="sel_subnet">
+        <?php
+            foreach($this->subnetlist as $subnet) {
+                echo "<option value = {$subnet['subnet']}>{$subnet['subnet']}</option>";
+            }
+        ?>
+        </select>
+        <input type = 'submit' value = 'Delete subnet'>
+        
+    </form>
+    
+</body>
+    
+</html>

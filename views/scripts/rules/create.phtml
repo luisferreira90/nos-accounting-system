@@ -1,0 +1,158 @@
+<html>
+<head>
+    <title>Business Rules Manager</title>
+</head>
+
+<body>
+    <h1>Business Rules Manager</h1>
+    
+    <p>Create a Business Rule</p>
+    <form action = "create2" method = "POST">
+    <table>
+        <tr>
+            <td>Type of rule</td>
+            <td>
+            <select name ='type'>
+                <option value ='1'>Happy Hour</option>
+                <option value ='2'>Time Weight</option>
+                <option value ='3'>Access Type Weight</option>
+            </select>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>Name</td>
+            <td><input type ="text" name ='name'/></td>
+        </tr>
+        
+        <tr>
+            <td>Description</td>
+            <td><input type ="text" name ='description'/></td>
+        </tr>
+        
+        <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+        
+        <tr><td></td><td>If you don't select an hour, it is assumed the rule works in all hours. The same principle
+            applies to the week day, month day and month</td></tr>
+        
+        <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+        
+        <tr>
+            <td>Hour</td>
+            <td><input type ="checkbox" name ='hour[]' value = '0'/>0
+            <input type ="checkbox" name ='hour[]' value = '1'/>1
+            <input type ="checkbox" name ='hour[]' value = '2'/>2
+            <input type ="checkbox" name ='hour[]' value = '3'/>3
+            <input type ="checkbox" name ='hour[]' value = '4'/>4
+            <input type ="checkbox" name ='hour[]' value = '5'/>5
+            <input type ="checkbox" name ='hour[]' value = '6'/>6
+            <input type ="checkbox" name ='hour[]' value = '7'/>7
+            <input type ="checkbox" name ='hour[]' value = '8'/>8
+            <input type ="checkbox" name ='hour[]' value = '9'/>9
+            <input type ="checkbox" name ='hour[]' value = '10'/>10
+            <input type ="checkbox" name ='hour[]' value = '11'/>11
+            <input type ="checkbox" name ='hour[]' value = '12'/>12
+            <input type ="checkbox" name ='hour[]' value = '13'/>13
+            <input type ="checkbox" name ='hour[]' value = '14'/>14
+            <input type ="checkbox" name ='hour[]' value = '15'/>15
+            <input type ="checkbox" name ='hour[]' value = '16'/>16
+            <input type ="checkbox" name ='hour[]' value = '17'/>17
+            <input type ="checkbox" name ='hour[]' value = '18'/>18
+            <input type ="checkbox" name ='hour[]' value = '19'/>19
+            <input type ="checkbox" name ='hour[]' value = '20'/>20
+            <input type ="checkbox" name ='hour[]' value = '21'/>21
+            <input type ="checkbox" name ='hour[]' value = '22'/>22
+            <input type ="checkbox" name ='hour[]' value = '23'/>23</td>
+        </tr>
+
+        <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+        
+        <tr>
+            <td>Week Day</td>
+            <td><input type ="checkbox" name ='weekday[]' value = '1'/>Monday
+            <input type ="checkbox" name ='weekday[]' value = '2'/>Tuesday
+            <input type ="checkbox" name ='weekday[]' value = '3'/>Wednesday
+            <input type ="checkbox" name ='weekday[]' value = '4'/>Thursday
+            <input type ="checkbox" name ='weekday[]' value = '5'/>Friday
+            <input type ="checkbox" name ='weekday[]' value = '6'/>Saturday
+            <input type ="checkbox" name ='weekday[]' value = '7'/>Sunday</td>
+        </tr>
+        
+        <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+        
+        <tr>
+            <td>Monthday</td>
+            <td><input type ="checkbox" name ='monthday[]' value = '1'/>1
+            <input type ="checkbox" name ='monthday[]' value = '2'/>2
+            <input type ="checkbox" name ='monthday[]' value = '3'/>3
+            <input type ="checkbox" name ='monthday[]' value = '4'/>4
+            <input type ="checkbox" name ='monthday[]' value = '5'/>5
+            <input type ="checkbox" name ='monthday[]' value = '6'/>6
+            <input type ="checkbox" name ='monthday[]' value = '7'/>7
+            <input type ="checkbox" name ='monthday[]' value = '8'/>8
+            <input type ="checkbox" name ='monthday[]' value = '9'/>9
+            <input type ="checkbox" name ='monthday[]' value = '10'/>10
+            <input type ="checkbox" name ='monthday[]' value = '11'/>11
+            <input type ="checkbox" name ='monthday[]' value = '12'/>12
+            <input type ="checkbox" name ='monthday[]' value = '13'/>13
+            <input type ="checkbox" name ='monthday[]' value = '14'/>14
+            <input type ="checkbox" name ='monthday[]' value = '15'/>15
+            <input type ="checkbox" name ='monthday[]' value = '16'/>16
+            <input type ="checkbox" name ='monthday[]' value = '17'/>17
+            <input type ="checkbox" name ='monthday[]' value = '18'/>18
+            <input type ="checkbox" name ='monthday[]' value = '19'/>19
+            <input type ="checkbox" name ='monthday[]' value = '20'/>20
+            <input type ="checkbox" name ='monthday[]' value = '21'/>21
+            <input type ="checkbox" name ='monthday[]' value = '22'/>22
+            <input type ="checkbox" name ='monthday[]' value = '23'/>23
+            <input type ="checkbox" name ='monthday[]' value = '24'/>24
+            <input type ="checkbox" name ='monthday[]' value = '25'/>25
+            <input type ="checkbox" name ='monthday[]' value = '26'/>26
+            <input type ="checkbox" name ='monthday[]' value = '27'/>27
+            <input type ="checkbox" name ='monthday[]' value = '28'/>28
+            <input type ="checkbox" name ='monthday[]' value = '29'/>29
+            <input type ="checkbox" name ='monthday[]' value = '30'/>30
+            <input type ="checkbox" name ='monthday[]' value = '31'/>31</td>
+        </tr>
+        
+        <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+        
+        <tr>
+            <td>Month</td>
+            <td><input type ="checkbox" name ='month[]' value = '1'/>Jan
+            <input type ="checkbox" name ='month[]' value = '2'/>Feb
+            <input type ="checkbox" name ='month[]' value = '3'/>Mar
+            <input type ="checkbox" name ='month[]' value = '4'/>Apr
+            <input type ="checkbox" name ='month[]' value = '5'/>May
+            <input type ="checkbox" name ='month[]' value = '6'/>Jun
+            <input type ="checkbox" name ='month[]' value = '7'/>Jul
+            <input type ="checkbox" name ='month[]' value = '8'/>Aug
+            <input type ="checkbox" name ='month[]' value = '9'/>Sep
+            <input type ="checkbox" name ='month[]' value = '10'/>Oct
+            <input type ="checkbox" name ='month[]' value = '11'/>Nov
+            <input type ="checkbox" name ='month[]' value = '12'/>Dec</td>
+        </tr>
+ 
+        <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+        
+        <tr>
+            <td>Percentage</td>
+            <td><input type ="text" name ='percentage'/></td>
+        </tr>      
+        
+        <tr>
+            <td>Starts On (in hours)</td>
+            <td><input type ="text" name ='starts'/></td>
+        </tr>
+        
+        <tr>
+            <td>Ends On (in hours)</td>
+            <td><input type ="text" name ='ends'/></td>
+        </tr>
+    </table>
+    <input type ="submit" value ='Create'>
+    </form>
+    
+</body>
+    
+</html>

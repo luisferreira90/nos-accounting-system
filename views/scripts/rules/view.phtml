@@ -1,0 +1,39 @@
+<html>
+<head>
+    <title>Business Rules Manager</title>
+</head>
+
+<body>
+    <h1>Business Rules Manager</h1>
+    
+    <p>Here is the list of the current Business Rules</p>
+    
+    <table border = 1>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Hour</th>
+            <th>Weekday</th>
+            <th>Monthday</th>
+            <th>Month</th>
+            <th>Description</th>
+            <th>Percentage</th>
+            <th>Starts On</th>
+            <th>Ends On</th>
+        </tr>
+        <?php
+        $string = "";
+        foreach($this->businessRulesList as $row) {
+            $string .= "<tr>";
+            foreach($row as $businessRule) {
+                $string .= "<td>$businessRule</td>";
+            }
+            $string .= "</tr>";
+        }
+        echo $string;
+        ?>
+    </table>
+    
+</body>
+    
+</html>
